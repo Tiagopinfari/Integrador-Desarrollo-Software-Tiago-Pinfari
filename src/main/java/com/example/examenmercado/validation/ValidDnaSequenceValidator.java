@@ -9,7 +9,7 @@ public class ValidDnaSequenceValidator implements ConstraintValidator<ValidDnaSe
 
     // Patrón Regex para asegurar que solo contiene A, T, C, G (mayúsculas)
     private static final Pattern VALID_BASE_PATTERN = Pattern.compile("^[ATCG]+$");
-    private static final int MIN_SIZE = 4; // Tamaño mínimo para una secuencia de 4
+    private static final int MIN_SIZE = 4;
 
     @Override
     public boolean isValid(String[] dna, ConstraintValidatorContext context) {
@@ -35,7 +35,6 @@ public class ValidDnaSequenceValidator implements ConstraintValidator<ValidDnaSe
             }
         }
 
-        // Todas las filas son NxN y tienen caracteres válidos
         return true;
     }
 }

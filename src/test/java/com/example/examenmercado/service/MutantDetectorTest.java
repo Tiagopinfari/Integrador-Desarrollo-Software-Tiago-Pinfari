@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-// NO USA @SpringBootTest para aislar la unidad de prueba (test unitario puro)
 class MutantDetectorTest {
 
     private MutantDetector detector;
@@ -16,10 +15,6 @@ class MutantDetectorTest {
         // Inicializar la clase antes de cada test
         detector = new MutantDetector();
     }
-
-    // =======================================================================
-    // CASOS MUTANTES (Debe retornar TRUE)
-    // =======================================================================
 
     @Test
     @DisplayName("MUTANTE: Dos secuencias horizontales")
@@ -105,10 +100,6 @@ class MutantDetectorTest {
         assertTrue(detector.isMutant(dna));
     }
 
-    // =======================================================================
-    // CASOS NO MUTANTES / HUMANOS (Debe retornar FALSE)
-    // =======================================================================
-
     @Test
     @DisplayName("HUMANO: Cero secuencias encontradas")
     void testHuman_NoSequences() {
@@ -150,10 +141,6 @@ class MutantDetectorTest {
         };
         assertTrue(detector.isMutant(dna));
     }
-
-    // =======================================================================
-    // CASOS DE VALIDACIÓN (Debe retornar FALSE)
-    // =======================================================================
 
     @Test
     @DisplayName("VALIDACIÓN: ADN nulo")

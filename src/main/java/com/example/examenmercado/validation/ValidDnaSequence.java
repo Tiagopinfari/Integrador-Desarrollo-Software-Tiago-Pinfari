@@ -8,10 +8,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-/**
- * Anotación de validación personalizada para asegurar que el array de ADN
- * sea una matriz NxN válida con solo caracteres A, T, C, G.
- */
 @Target({ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = ValidDnaSequenceValidator.class)

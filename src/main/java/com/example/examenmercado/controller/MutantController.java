@@ -15,20 +15,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/") // Raíz de la API
-@RequiredArgsConstructor // Inyección de dependencias (MutantService, StatsService)
+@RequestMapping("/")
+@RequiredArgsConstructor
 @Tag(name = "Mutant Detector", description = "API para la detección de ADN mutante y estadísticas.")
 public class MutantController {
 
     private final MutantService mutantService;
     private final StatsService statsService;
 
-    /**
-     * Endpoint POST /mutant/
-     * Verifica si una secuencia de ADN es mutante y guarda el resultado.
-     * @param request El JSON que contiene el array de ADN.
-     * @return HTTP 200 OK si es mutante, HTTP 403 Forbidden si es humano.
-     */
     @PostMapping("/mutant")
     @Operation(summary = "Verificar si un ADN es mutante")
     @ApiResponses(value = {
@@ -52,11 +46,6 @@ public class MutantController {
         }
     }
 
-    /**
-     * Endpoint GET /stats
-     * Retorna las estadísticas de las verificaciones de ADN.
-     * @return JSON con count_mutant_dna, count_human_dna y ratio.
-     */
     @GetMapping("/stats")
     @Operation(summary = "Obtener estadísticas de las verificaciones de ADN")
     @ApiResponse(responseCode = "200", description = "Estadísticas obtenidas exitosamente.")

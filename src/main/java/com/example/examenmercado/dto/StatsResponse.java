@@ -7,7 +7,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-// Lombok para getters/setters/constructores
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

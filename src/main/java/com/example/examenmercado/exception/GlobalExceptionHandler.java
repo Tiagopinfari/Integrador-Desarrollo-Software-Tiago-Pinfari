@@ -2,7 +2,6 @@ package com.example.examenmercado.exception;
 
 import com.example.examenmercado.dto.ErrorResponse;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +15,6 @@ import java.time.LocalDateTime;
 @Slf4j
 public class GlobalExceptionHandler {
 
-    // Maneja errores de validación de DTOs (@NotNull, @NotEmpty, etc.)
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorResponse> handleValidationErrors(
             MethodArgumentNotValidException ex, HttpServletRequest request) {
@@ -39,7 +37,6 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
 
-    // Maneja errores de cálculo de hash (ej. si el algoritmo no existe)
     @ExceptionHandler(DnaHashCalculationException.class)
     public ResponseEntity<ErrorResponse> handleDnaHashCalculationException(
             DnaHashCalculationException ex, HttpServletRequest request) {
