@@ -69,9 +69,9 @@ Asegúrate de tener instalado **Java JDK 21+** y **Git**.
 
 ### Paso 1: Clonar el Repositorio
 
-git clone <https://github.com/Tiagopinfari/Integrador-Desarrollo-Software-Tiago-Pinfari.git>
+`git clone https://github.com/Tiagopinfari/Integrador-Desarrollo-Software-Tiago-Pinfari.git`
 
-cd examenmercado
+`cd examenmercado`
 
 ### Paso 2: Ejecutar la Aplicación
 
@@ -117,13 +117,17 @@ Una vez que la aplicación está corriendo, puedes acceder a los siguientes recu
 
 Para ver todos los endpoints de forma interactiva y probarlos:
 
-**URL**: http://localhost:8080/swagger-ui.html
+**URL Local:** http://localhost:8080/swagger-ui.html
+
+**URL Render:** https://integrador-desarrollo-software-tiago.onrender.com/swagger-ui/index.html
 
 ### 2. Consola de la Base de Datos (H2)
 
 Para ver los registros de ADN que se van guardando en la base de datos en memoria:
 
-**URL**: http://localhost:8080/h2-console
+**URL Local:** http://localhost:8080/h2-console
+
+**URL Render:** https://integrador-desarrollo-software-tiago.onrender.com/h2-console
 
 **Datos de Conexión:**
 
